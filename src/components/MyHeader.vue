@@ -7,7 +7,7 @@
         v-model="inputSerch"
         @keyup.enter="$emit('inputSerch', inputSerch)">
 
-        <button>Cerca</button>
+        <button @click="$emit('inputSerch', inputSerch)">Cerca</button>
     </div>
   </header>
 </template>
