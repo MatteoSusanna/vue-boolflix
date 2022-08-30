@@ -7,15 +7,15 @@
 
             <div class="wrapperor_language">
 
-                <div class="lingua" v-if="film.original_language == en">
+                <div class="lingua" v-if="(film.original_language == 'en')">
                     <img src="../assets/ing.png">
                 </div>
 
-                <div class="lingua" v-else-if="film.original_language == it">
+                <div class="lingua" v-else-if="(film.original_language == 'it')">
                     <img src="../assets/ita.png">
                 </div>
 
-                <div class="lingua" v-else-if="film.original_language == fr">
+                <div class="lingua" v-else-if="(film.original_language == 'fr')">
                     <img src="../assets/fra.png">
                 </div>
 
@@ -68,6 +68,15 @@ export default {
                 background-color: black;
                 height: 200px;
                 flex-basis: 15%;
+                border: 1px solid red;
+            }
+            .lingua{
+                height: 40px;
+                width: 40px;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
         }
     }
