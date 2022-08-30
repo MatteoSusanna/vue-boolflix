@@ -25,7 +25,7 @@ export default {
         inputPassata: String
     },
     created(){
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=976d1d1629fea964df856f00c768c591&query=' + this.inputMain + '&language=it-IT')
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=976d1d1629fea964df856f00c768c591&query=' + this.inputPassata + '&language=it-IT')
         .then(film =>{
             this.getFilm = film.data.results;
             console.log(this.getFilm)
@@ -44,12 +44,6 @@ export default {
         background-color: $main_color;
         overflow: hidden;
         overflow-y: scroll;
-
-        ul{
-            li{
-                list-style: none;
-            }
-        }
     }
 
 </style>
