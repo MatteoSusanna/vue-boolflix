@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader @inputSerch="recuperaInput" :inputMain="inputPassata" />
+    <MyHeader @inputSerch="recuperaInput" :inputPassata="inputPassata" />
 
     <MyMain />
 
