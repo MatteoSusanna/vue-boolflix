@@ -14,10 +14,13 @@ export default {
             getFilm: [],
         }
     },
+    props:{
+        inputMain: String
+    },
     created(){
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=976d1d1629fea964df856f00c768c591&query=2021&language=it-IT')
         .then(film =>{
-            this.getFilm = film
+            this.getFilm = film.data.results;
         })
     }
 }

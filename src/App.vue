@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader />
+    <MyHeader @inputSerch="recuperaInput" :inputMain="inputPassata" />
 
     <MyMain />
 
@@ -16,6 +16,16 @@ export default {
   components: {
     MyHeader,
     MyMain,
+  },
+  data(){
+    return{
+      inputPassata: '',
+    }
+  },
+  methods:{
+    recuperaInput(recuperaInput){
+      this.inputPassata = recuperaInput;
+    }
   }
 }
 </script>

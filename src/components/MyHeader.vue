@@ -1,8 +1,12 @@
 <template>
   <header>
     <h1>BOOLFLIX</h1>
-    <div>
-        <input type="text">
+    <div class="wrapper-serch">
+
+        <input type="text" 
+        v-model="inputSerch"
+        @keyup="$emit('inputSerch', inputSerch)">
+
         <button>Cerca</button>
     </div>
   </header>
@@ -10,7 +14,12 @@
 
 <script>
 export default {
-    nome: 'MyHeader'
+    nome: 'MyHeader',
+    data(){
+        return{
+            inputSerch: ''
+        }
+    }
 }
 </script>
 
