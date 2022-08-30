@@ -47,6 +47,32 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../styles/general.scss';
+    .text_center{
+        text-align: center;
+    }
+
+    .cards{
+            display: flex;
+            flex-wrap: wrap;
+            color: $text_color;
+            width: 1400px;
+            margin: 0 auto;
+            .card{
+                background-color: black;
+                height: 200px;
+                flex-basis: 15%;
+                border: 1px solid red;
+            }
+            .lingua{
+                height: 40px;
+                width: 40px;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
 
 </style>
