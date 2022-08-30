@@ -10,13 +10,20 @@
                 <div class="lingua" v-if="(film.original_language == 'en')">
                     <img src="../assets/ing.png">
                 </div>
-
                 <div class="lingua" v-else-if="(film.original_language == 'it')">
                     <img src="../assets/ita.png">
                 </div>
-
                 <div class="lingua" v-else-if="(film.original_language == 'fr')">
                     <img src="../assets/fra.png">
+                </div>
+                <div class="lingua" v-else-if="(film.original_language == 'ja')">
+                    <img src="../assets/ja.png">
+                </div>
+                <div class="lingua" v-else-if="(film.original_language == 'es')">
+                    <img src="../assets/es.png">
+                </div>
+                <div class="lingua" v-else-if="(film.original_language == 'ko')">
+                    <img src="../assets/ko.png">
                 </div>
 
                 <div class="lingua text_center" v-else>{{film.original_language}}</div>
