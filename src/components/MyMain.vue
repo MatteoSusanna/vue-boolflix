@@ -12,24 +12,17 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
     nome: 'MyMain',
     data(){
         return{
-            getFilm: [],
+            
         }
     },
     props:{
-        inputPassata: String
+        getFilm: Array
     },
     created(){
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=976d1d1629fea964df856f00c768c591&query=' + this.inputPassata + '&language=it-IT')
-        .then(film =>{
-            this.getFilm = film.data.results;
-            console.log(this.getFilm)
-        })
 
         
     },
