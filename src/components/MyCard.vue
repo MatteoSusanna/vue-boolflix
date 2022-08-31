@@ -33,7 +33,7 @@
                             <div class="lingua text_center" v-else>{{film.original_language}}</div>
                     </div>
 
-                    <div>
+                    <div class="punteggio">
                         <div v-if="calcolaVoto(film.vote_average) == 1">
                             <i class="fa-solid fa-star"></i>
                         </div>

@@ -35,7 +35,34 @@
 
                         </div>
 
-                        <div class="voto text_center">{{calcolaVoto(serie.vote_average)}}</div>
+                        <div class="punteggio">
+                            <div v-if="calcolaVoto(serie.vote_average) == 1">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div v-else-if="calcolaVoto(serie.vote_average) == 2">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div v-else-if="calcolaVoto(serie.vote_average) == 3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div v-else-if="calcolaVoto(serie.vote_average) == 4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div v-else-if="calcolaVoto(serie.vote_average) == 5">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div v-else class="voto text_center">{{calcolaVoto(serie.vote_average)}}</div>
+                        </div>
                     </div>
                 </div>
         </div>
