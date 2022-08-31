@@ -13,22 +13,22 @@
                     <div class="wrapper_language">
 
                             <div class="lingua" v-if="(film.original_language == 'en')">
-                                <img src="../assets/ing.png">
+                                <img class="bandiera" src="../assets/ing.png">
                             </div>
                             <div class="lingua" v-else-if="(film.original_language == 'it')">
-                                <img src="../assets/ita.png">
+                                <img class="bandiera" src="../assets/ita.png">
                             </div>
                             <div class="lingua" v-else-if="(film.original_language == 'fr')">
-                                <img src="../assets/fra.png">
+                                <img class="bandiera" src="../assets/fra.png">
                             </div>
                             <div class="lingua" v-else-if="(film.original_language == 'ja')">
-                                <img src="../assets/ja.png">
+                                <img class="bandiera" src="../assets/ja.png">
                             </div>
                             <div class="lingua" v-else-if="(film.original_language == 'es')">
-                                <img src="../assets/es.png">
+                                <img class="bandiera" src="../assets/es.png">
                             </div>
                             <div class="lingua" v-else-if="(film.original_language == 'ko')">
-                                <img src="../assets/ko.png">
+                                <img class="bandiera" src="../assets/ko.png">
                             </div>
                             <div class="lingua text_center" v-else>{{film.original_language}}</div>
                     </div>
@@ -36,21 +36,31 @@
                     <div class="punteggio">
                         <div v-if="calcolaVoto(film.vote_average) == 1">
                             <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
                         </div>
                         <div v-else-if="calcolaVoto(film.vote_average) == 2">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
                         </div>
                         <div v-else-if="calcolaVoto(film.vote_average) == 3">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
                         </div>
                         <div v-else-if="calcolaVoto(film.vote_average) == 4">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star color_gray"></i>
                         </div>
                         <div v-else-if="calcolaVoto(film.vote_average) == 5">
                             <i class="fa-solid fa-star"></i>
@@ -83,6 +93,9 @@ export default {
 
 <style lang="scss">
 @import '../styles/general.scss';
+    .color_gray{
+        color: gray;
+    }
     .text_center{
         text-align: center;
     }
@@ -109,14 +122,9 @@ export default {
                 .copertina{
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
-                
+                    object-fit: contain;
                 }
                 
-                img{
-                    width: 100%;
-                    object-fit: cover;
-                }
                 &:hover .copertina{
                         display: none;
                 }
@@ -127,6 +135,11 @@ export default {
             .lingua{
                 height: 40px;
                 width: 40px;
+
+                .bandiera{
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
         }
 

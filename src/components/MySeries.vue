@@ -38,21 +38,31 @@
                         <div class="punteggio">
                             <div v-if="calcolaVoto(serie.vote_average) == 1">
                                 <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
                             </div>
                             <div v-else-if="calcolaVoto(serie.vote_average) == 2">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
                             </div>
                             <div v-else-if="calcolaVoto(serie.vote_average) == 3">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
                             </div>
                             <div v-else-if="calcolaVoto(serie.vote_average) == 4">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star color_gray"></i>
                             </div>
                             <div v-else-if="calcolaVoto(serie.vote_average) == 5">
                                 <i class="fa-solid fa-star"></i>
@@ -100,7 +110,7 @@ export default {
             display: flex;
             flex-wrap: wrap;
             color: $text_color;
-            width: 1400px;
+            width: 1700px;
             margin: 0 auto;
             .card{
                 background-color: black;
@@ -112,8 +122,7 @@ export default {
                 .copertina{
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
-                
+                    object-fit: contain;
                 }
                 
                 img{
