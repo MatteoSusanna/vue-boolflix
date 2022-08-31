@@ -5,7 +5,8 @@
 
         <input type="text" 
         v-model="inputSerch"
-        @keyup.enter="$emit('inputSerch', inputSerch)">
+        @keyup.enter="$emit('inputSerch', inputSerch)"
+        placeholder="Cerca..."/>
 
         <button @click="$emit('inputSerch', inputSerch)">Cerca</button>
     </div>
@@ -34,8 +35,29 @@ export default {
         justify-content: space-between;
         padding: 0 50px;
         h1{
-            color: red;
+            color: #ff8906;
             font-weight: 500;
+        }
+        .wrapper-serch{
+
+            input{
+                height: 30px;
+                margin-right: 10px;
+                font-size: 17px;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            button{
+                height: 30px;
+                background-color: #ff8906;
+                font-weight: 600;
+                padding: 0 10px;
+                border-radius: 5px;
+
+                &:hover{
+                    outline: 1px solid #ff8906;
+                }
+            }
         }
     }
 

@@ -34,6 +34,7 @@ export default {
         background-color: $main_color;
         overflow: hidden;
         overflow-y: scroll;
+        padding: 0 10px;
         
     }
 

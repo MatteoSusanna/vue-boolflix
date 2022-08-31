@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <h2>FILM</h2>
+        <h1 class="mtb">FILM</h1>
         <div class="cards">
             <div class="card" v-for="(film, indice) in getFilm" :key="indice">
 
@@ -93,6 +93,9 @@ export default {
 
 <style lang="scss">
 @import '../styles/general.scss';
+    .mtb{
+        margin: 50px 0;
+    }
     .color_gray{
         color: gray;
     }
@@ -114,16 +117,16 @@ export default {
             margin: 0 auto;
             .card{
                 background-color: black;
-                height: 200px;
+                height: 400px;
                 width: 200px;
                 flex-basis: 15%;
-                border: 1px solid red;
-                padding: 5px 2px;
+                border: 1px solid white;
+                padding: 15px 2px;
 
                 .copertina{
                     width: 100%;
                     height: 100%;
-                    object-fit: contain;
+                    object-fit: cover;
                 }
                 
                 &:hover .copertina{
@@ -136,7 +139,7 @@ export default {
             .lingua{
                 height: 40px;
                 width: 40px;
-                margin: 5px auto;
+                margin: 40px auto;
 
                 .bandiera{
                     width: 100%;

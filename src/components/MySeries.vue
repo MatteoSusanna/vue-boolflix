@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>SERIES</h2>
+        <h1 class="mtb">SERIES</h1>
         <div class="cards" >
                 <div class="card" v-for="(serie, indice) in getSeries" :key="indice">
                     
@@ -118,15 +118,15 @@ export default {
             margin: 0 auto;
             .card{
                 background-color: black;
-                height: 200px;
+                height: 400px;
                 width: 200px;
                 flex-basis: 15%;
-                border: 1px solid red;
+                border: 1px solid white;
 
                 .copertina{
                     width: 100%;
                     height: 100%;
-                    object-fit: contain;
+                    object-fit: cover;
                 }
                 
                 img{
