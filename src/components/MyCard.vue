@@ -32,7 +32,35 @@
                             </div>
                             <div class="lingua text_center" v-else>{{film.original_language}}</div>
                     </div>
-                        <div class="Voto text_center">{{film.vote_average}}</div>
+
+                    <div>
+                        <div v-if="calcolaVoto(film.vote_average) == 1">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div v-else-if="calcolaVoto(film.vote_average) == 2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div v-else-if="calcolaVoto(film.vote_average) == 3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div v-else-if="calcolaVoto(film.vote_average) == 4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div v-else-if="calcolaVoto(film.vote_average) == 5">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div v-else class="voto text_center">{{calcolaVoto(film.vote_average)}}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,6 +73,11 @@ export default {
     props:{
         getFilm: Array,
     },
+    methods:{
+        calcolaVoto(voto){
+            return Math.floor(voto / 2);
+        }
+    }
 }
 </script>
 

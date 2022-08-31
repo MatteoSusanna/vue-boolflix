@@ -35,9 +35,8 @@
 
                         </div>
 
-                        <div class="voto text_center">{{serie.vote_average}}</div>
+                        <div class="voto text_center">{{calcolaVoto(serie.vote_average)}}</div>
                     </div>
-                    
                 </div>
         </div>
 
@@ -48,7 +47,12 @@
 export default {
     nome: 'MySeries',
     props:{
-        getSeries: Array
+        getSeries: Array,
+    },
+    methods:{
+        calcolaVoto(voto){
+            return Math.floor(voto / 2);
+        }
     }
 }
 </script>
