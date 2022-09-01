@@ -35,8 +35,9 @@
 
                     <div class="punteggio t-center">
                         <i v-for="n in 5" :key="n"
-                        class="fa-star" 
-                        :class="(n>calcolaVoto(film.vote_average))?'fa-regular':'fa-solid'"></i>
+                            class="fa-star" 
+                            :class="(n>calcolaVoto(film.vote_average))?'fa-regular':'fa-solid'">
+                        </i>
                     </div>
 
                     <h3 class="text_center mtb-10">Trama:</h3>
