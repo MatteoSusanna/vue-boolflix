@@ -7,7 +7,7 @@
                     <img class="copertina d-block" :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path " />
                     
                     <div class="info d-none">
-                        <div class="titolo text_center">{{serie.name}}</div>
+                        <div class="titolo text_center mb"><h3>{{serie.name}}</h3></div>
                         <div class="titolo-originale text_center">{{serie.original_name}}</div>
 
                         <div class="wrapperor_language">
@@ -73,6 +73,9 @@
                             </div>
                             <div v-else class="voto text_center">{{calcolaVoto(serie.vote_average)}}</div>
                         </div>
+
+                        <h3 class="text_center">Trama:</h3>
+                        <div class="trama text_center">{{serie.overview}}</div>
                     </div>
                 </div>
         </div>
@@ -88,7 +91,7 @@ export default {
     },
     methods:{
         calcolaVoto(voto){
-            return Math.floor(voto / 2);
+            return Math.ceil(voto / 2);
         }
     }
 }
@@ -122,6 +125,7 @@ export default {
                 width: 200px;
                 flex-basis: 15%;
                 border: 1px solid white;
+                overflow: auto;
 
                 .copertina{
                     width: 100%;

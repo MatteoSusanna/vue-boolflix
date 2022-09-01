@@ -7,7 +7,7 @@
                 <img class="copertina d-block" :src="'https://image.tmdb.org/t/p/w342' + film.poster_path " />
 
                 <div  class="info d-none">
-                    <div class="titolo text_center">{{film.title}}</div>
+                    <div class="titolo text_center mb"><h3>{{film.title}}</h3></div>
                     <div class="titolo-originale text_center">{{film.original_title}}</div>
 
                     <div class="wrapper_language">
@@ -71,6 +71,9 @@
                         </div>
                         <div v-else class="voto text_center">{{calcolaVoto(film.vote_average)}}</div>
                     </div>
+
+                    <h3 class="text_center mtb-10">Trama:</h3>
+                    <div class="trama text_center ">{{film.overview}}</div>
                 </div>
             </div>
         </div>
@@ -85,7 +88,7 @@ export default {
     },
     methods:{
         calcolaVoto(voto){
-            return Math.floor(voto / 2);
+            return Math.ceil(voto / 2);
         }
     }
 }
@@ -93,8 +96,14 @@ export default {
 
 <style lang="scss">
 @import '../styles/general.scss';
+    .mb{
+        margin-bottom: 20px;
+    }
+    .mtb-10{
+        margin: 10px 0;
+    }
     .mtb{
-        margin: 50px 0;
+        margin: 30px 0;
     }
     .color_gray{
         color: gray;
@@ -107,6 +116,10 @@ export default {
     }
     .d-none{
         display: none;
+    }
+    .trama{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13px;
     }
 
     .cards{
@@ -122,6 +135,7 @@ export default {
                 flex-basis: 15%;
                 border: 1px solid white;
                 padding: 15px 2px;
+                overflow: auto;
 
                 .copertina{
                     width: 100%;
@@ -139,7 +153,7 @@ export default {
             .lingua{
                 height: 40px;
                 width: 40px;
-                margin: 40px auto;
+                margin: 20px auto;
 
                 .bandiera{
                     width: 100%;

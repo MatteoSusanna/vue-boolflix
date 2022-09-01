@@ -42,9 +42,7 @@ export default {
         .then(series =>{
           this.getSeries = series.data.results
         })
-      }
-      
-
+      }   
     }
   }
 }
@@ -52,5 +50,6 @@ export default {
 
 <style lang="scss">
 @import './styles/general.scss';
+
 
 </style>
