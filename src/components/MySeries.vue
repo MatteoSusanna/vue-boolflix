@@ -4,11 +4,10 @@
         <div class="cards" >
                 <div class="card" v-for="(serie, indice) in getSeries" :key="indice">
                     
-                    <div class="copertina" v-if="serie.poster_path == null ">
+                    <div class="copertina d-block" v-if="serie.poster_path == null ">
                         <img :src="require('../assets/rotta.png')" alt="">
                         <p class="t-center">Immagine non disponibile</p>
                     </div>
-
                     <img class="copertina d-block" 
                         :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path " 
                          v-else
@@ -51,7 +50,7 @@
                         </div>
                         <div class="punteggio t-center" v-else>VALUTAZIONE NON DISPONIBILE</div>
 
-                        <h3 class="text_center">Trama:</h3>
+                        <h3 class="text_center mtb-10">Trama:</h3>
                         <div class="trama text_center">{{serie.overview}}</div>
                     </div>
                 </div>
