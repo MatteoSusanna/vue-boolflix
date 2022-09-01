@@ -4,8 +4,8 @@
         <div class="cards">
             <div class="card" v-for="(film, indice) in getFilm" :key="indice">
 
-                <div v-if="film.poster_path == null ">
-                    <img class="copertina" :src="require('../assets/rotta.png')" alt="">
+                <div class="copertina" v-if="film.poster_path == null ">
+                    <img :src="require('../assets/rotta.png')" alt="">
                     <p class="t-center">Immagine non disponibile</p>
                 </div>
 
