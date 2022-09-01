@@ -4,7 +4,10 @@
         <div class="cards">
             <div class="card" v-for="(film, indice) in getFilm" :key="indice">
 
-                <img class="copertina" v-if="film.poster_path == null " :src="require('../assets/rotta.png')" alt="">
+                <div v-if="film.poster_path == null ">
+                    <img class="copertina" :src="require('../assets/rotta.png')" alt="">
+                    <p class="t-center">Immagine non disponibile</p>
+                </div>
 
                 <img class="copertina d-block" 
                     :src="'https://image.tmdb.org/t/p/w342' + film.poster_path " 

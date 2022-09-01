@@ -4,7 +4,10 @@
         <div class="cards" >
                 <div class="card" v-for="(serie, indice) in getSeries" :key="indice">
                     
-                    <img class="copertina" v-if="serie.poster_path == null " :src="require('../assets/rotta.png')" alt="">
+                    <div v-if="serie.poster_path == null ">
+                        <img class="copertina" :src="require('../assets/rotta.png')" alt="">
+                        <p class="t-center">Immagine non disponibile</p>
+                    </div>
 
                     <img class="copertina d-block" 
                         :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path " 
