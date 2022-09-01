@@ -35,43 +35,10 @@
 
                         </div>
 
-                        <div class="punteggio">
-                            <div class="t-center" v-if="calcolaVoto(serie.vote_average) == 1">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                            </div>
-                            <div class="t-center" v-else-if="calcolaVoto(serie.vote_average) == 2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                            </div>
-                            <div class="t-center" v-else-if="calcolaVoto(serie.vote_average) == 3">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                            </div>
-                            <div class="t-center" v-else-if="calcolaVoto(serie.vote_average) == 4">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star color_gray"></i>
-                            </div>
-                            <div class="t-center" v-else-if="calcolaVoto(serie.vote_average) == 5">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div v-else class="voto text_center">{{calcolaVoto(serie.vote_average)}}</div>
+                        <div class="punteggio t-center">
+                            <i v-for="n in 5" :key="n"
+                            class="fa-star" 
+                            :class="(n>calcolaVoto(serie.vote_average))?'fa-regular':'fa-solid'"></i>
                         </div>
 
                         <h3 class="text_center">Trama:</h3>
