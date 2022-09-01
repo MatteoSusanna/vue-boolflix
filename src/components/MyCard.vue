@@ -4,7 +4,12 @@
         <div class="cards">
             <div class="card" v-for="(film, indice) in getFilm" :key="indice">
 
-                <img class="copertina d-block" :src="'https://image.tmdb.org/t/p/w342' + film.poster_path " />
+                <img class="copertina" v-if="film.poster_path == null " :src="require('../assets/rotta.png')" alt="">
+
+                <img class="copertina d-block" 
+                    :src="'https://image.tmdb.org/t/p/w342' + film.poster_path " 
+                    v-else
+                />
 
                 <div  class="info d-none">
                     <div class="titolo text_center mb"><h3>{{film.title}}</h3></div>
@@ -32,13 +37,14 @@
                             </div>
                             <div class="lingua text_center" v-else>{{film.original_language}}</div>
                     </div>
-
-                    <div class="punteggio t-center">
+                    
+                    <div class="punteggio t-center" v-if="calcolaVoto(film.vote_average) > 0">
                         <i v-for="n in 5" :key="n"
                             class="fa-star" 
                             :class="(n>calcolaVoto(film.vote_average))?'fa-regular':'fa-solid'">
                         </i>
                     </div>
+                    <div class="punteggio t-center" v-else>VALUTAZIONE NON DISPONIBILE</div>
 
                     <h3 class="text_center mtb-10">Trama:</h3>
                     <div class="trama text_center ">{{film.overview}}</div>
